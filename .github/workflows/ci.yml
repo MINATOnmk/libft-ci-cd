@@ -5,6 +5,7 @@ on: # triggerss
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  watch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }} 
