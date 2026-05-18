@@ -27,3 +27,5 @@ jobs:
       run : |
         cc test.c  libft.a -o test_runner
         ./test_runner
+
+
