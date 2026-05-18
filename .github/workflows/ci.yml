@@ -1,6 +1,6 @@
 name: libft CI/CD Pipeline
 
-on: # triggers
+on: # triggerss
   push:
     branches: [ "main" ]
   pull_request:
