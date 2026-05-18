@@ -1,13 +1,13 @@
-name : libft CI/CD Pipeline
+name: libft CI/CD Pipeline
 
-on : # triggers
+on: # triggers
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
-concurrency :
-  group : ${{ github.workflow }}-${{ github.ref }} 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }} 
   cancel-in-progress: true
 
 jobs:
@@ -15,18 +15,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-     -name: checkout repo
-      uses: actions/checkout@v4
+      - name: checkout repo
+        uses: actions/checkout@v4
      
-     -name: setup c enviroment
-      run: sudo apt-get update && sudo apt-get install -y build-essential
+      - name: setup c environment
+        run: sudo apt-get update && sudo apt-get install -y build-essential
     
-     -name: Compile Libft Library
-      run: make
-     -name: run test
-      run : |
-        cc test.c  libft.a -o test_runner
-        ./test_runner
+      - name: Compile Libft Library
+        run: make
 
-
-
+      - name: run test
+        run: |
+          cc test.c libft.a -o test_runner
+          ./test_runner
+          
