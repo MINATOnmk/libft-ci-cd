@@ -37,12 +37,22 @@ jobs:
       
       - name: run norminette test
         run: norminette ft_*.c libft.h
-  # deploy-libft:
-  #   runs-on: ubuntu-latest
-
-  #   steps:
-  #     - name: checkout repo 2
-  #       uses: actions/checkout@v4
+  deploy-libft:
+    needs: test-libft
+    runs-on: ubuntu-latest
+    permissions: 
+      contents: write
+    
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v4
       
-  #     - name: build libft
-  #       run: make
+      - name: build libft
+        run: make
+      - name: creat github release
+        uses: softprops/action-gh-release@v3
+        with: 
+          tag_name: v1.0.${{ github.run_number }}
+          files: |
+            libft.a 
+            libft.h
