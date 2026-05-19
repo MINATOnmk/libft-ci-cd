@@ -31,10 +31,9 @@ int	main(void)
 		assert(strcmp(joined, "hello world") == 0);
 		free(joined);
 	}
+	printf("⏳ Running the purposefully failing test...\n");
+    assert(ft_strlen("hi") == 5); 
 	printf("✅ ft_strjoin test passed!\n");
 	printf("✅ All tests passed!\n");
 	return (0);
 }
-
-	/* printf("⏳ Running the purposefully failing test...\n");
-     assert(ft_strlen("hi") == 5); */
