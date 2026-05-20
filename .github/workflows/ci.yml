@@ -27,16 +27,17 @@ jobs:
       - name: install norminette
         run: pip install norminette
         
+      - name: run norminette test
+        run: norminette ft_*.c libft.h
+
       - name: Compile Libft Library
         run: make
-
+  
       - name: run test
         run: |
           cc test.c libft.a -o test_runner
           ./test_runner
       
-      - name: run norminette test
-        run: norminette ft_*.c libft.h
   deploy-libft:
     needs: test-libft
     runs-on: ubuntu-latest
