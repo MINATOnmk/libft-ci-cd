@@ -32,7 +32,7 @@ int	main(void)
 		free(joined);
 	}
 	// printf("⏳ Running the purposefully failing test...\n");
-    // assert(ft_strlen("hi") == 5); 
+     assert(ft_strlen("hi") == 5); 
 	printf("✅ ft_strjoin test passed!\n");
 	printf("✅ All tests passed!\n");
 	return (0);
